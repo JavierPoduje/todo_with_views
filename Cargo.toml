@@ -1,0 +1,10 @@
+[package]
+name = "managing_views"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "2"
+actix-rt = "1.0"
+serde_json = { version = "1.0", default-feature = false, features = ["alloc"] }
+
