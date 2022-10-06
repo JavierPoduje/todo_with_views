@@ -1,6 +1,7 @@
 use actix_web::web;
 
 mod create;
+mod edit;
 mod get;
 mod utils;
 
@@ -14,12 +15,14 @@ pub fn item_factory(app: &mut web::ServiceConfig) {
         &base_path.define(String::from("/create/{title}")),
         web::post().to(create::create),
     );
-    app.route(
-        &base_path.define(String::from("/create/{title}")),
-        web::get().to(create::create),
-    );
+
     app.route(
         &base_path.define(String::from("/get")),
         web::get().to(get::get),
+    );
+
+    app.route(
+        &base_path.define(String::from("/edit")),
+        web::put().to(edit::edit),
     );
 }
