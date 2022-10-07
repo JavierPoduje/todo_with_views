@@ -2,9 +2,8 @@ use std::future::{ready, Ready};
 
 use crate::to_do::structs::base::Base;
 use crate::to_do::ItemTypes;
-use actix_web::{HttpRequest, HttpResponse, Responder};
+use actix_web::{Error, HttpRequest, HttpResponse, Responder};
 use serde::Serialize;
-use serde_json::Error;
 
 #[derive(Serialize)]
 pub struct ToDoItems {
