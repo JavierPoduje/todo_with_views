@@ -19,11 +19,11 @@ async fn main() -> std::io::Result<()> {
                     }
                 }
 
-                let fut = srv.call(req);
-                async {
-                    let result = fut.await?;
-                    Ok(result);
-                }
+                return srv.call(req);
+                //async {
+                //    let result = fut.await?;
+                //    Ok(result);
+                //}
             })
             .configure(views::views_factory);
         return app;

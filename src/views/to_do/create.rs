@@ -13,7 +13,7 @@ pub async fn create(req: HttpRequest) -> impl Responder {
 
     let title_reference: String = title.clone();
 
-    let item = to_do::to_do_factory(&String::from("pending"), title).expect("create");
+    let item = to_do::to_do_factory(&String::from("pending"), title_reference).expect("create");
 
     process_input(item, "create".to_string(), &state);
 
