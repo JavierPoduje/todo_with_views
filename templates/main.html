@@ -7,18 +7,24 @@
     <title>To Do App</title>
   </head>
   <body>
-    <h1>To Do Items</h1>
-    <input id="name" type="text" placeholder="create to do item" />
-    <button id="create-button" value="Send">Create</button>
+    <style>
+      {{BASE_CSS}}
+      {{CSS}}
+      HEADER_CSS
+    </style>
+    <div class="mainContainer">
+      HEADER_HTML
+      <h1>Done Items</h1>
+      <div id="doneItems"></div>
+      <h1>To Do Items</h1>
+      <div id="pendingItems"></div>
+      <input id="name" type="text" placeholder="create to do item" />
+      <button class="actionButton" id="create-button" value="Send">
+        Create
+      </button>
+    </div>
   </body>
   <script>
-    let createButton = document.getElementById("create-button");
-    createButton.addEventListener("click", postAlert);
-
-    function postAlert(argument) {
-      let titleInput = document.getElementById("name");
-      alert(titleInput.value);
-      titleInput.value = null;
-    }
+    {{JAVASCRIPT}}
   </script>
 </html>
